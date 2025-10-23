@@ -1,6 +1,6 @@
 import { generateReturnsArray } from "./src/investimentGoals.js";
 import { Chart } from "chart.js/auto";
-//import { createTable } from "./src/table";
+import { createTable } from "./src/table";
 
 const finalMoneyChart = document.getElementById("final-money-distribution");
 const progressionChart = document.getElementById("progression");
@@ -132,7 +132,7 @@ function renderProgression(evt) {
     },
   });
 
-  //createTable(columnsArray, returnsArray, "results-table");
+  createTable(columnsArray, returnsArray, "results-table");
 }
 
 function isObjectEmpty(obj) {
@@ -201,17 +201,17 @@ for (const formElement of form) {
   }
 }
 
-//const mainEl = document.querySelector("main");
-//const carouselEl = document.getElementById("carousel");
-//const nextButton = document.getElementById("slide-arrow-next");
-//const previousButton = document.getElementById("slide-arrow-previous");
+const mainEl = document.querySelector("main");
+const carouselEl = document.getElementById("carousel");
+const nextButton = document.getElementById("slide-arrow-next");
+const previousButton = document.getElementById("slide-arrow-previous");
 
-// nextButton.addEventListener("click", () => {
-//   carouselEl.scrollLeft += mainEl.clientWidth;
-// });
-// previousButton.addEventListener("click", () => {
-//   carouselEl.scrollLeft -= mainEl.clientWidth;
-// });
+nextButton.addEventListener("click", () => {
+  carouselEl.scrollLeft += mainEl.clientWidth;
+});
+previousButton.addEventListener("click", () => {
+  carouselEl.scrollLeft -= mainEl.clientWidth;
+});
 
 form.addEventListener("submit", renderProgression);
 clearFormButton.addEventListener("click", clearForm);
